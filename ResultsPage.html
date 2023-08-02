@@ -1,0 +1,24 @@
+{{ extends 'global/Page.html' }}
+{{ block title }}Results{{ endblock }}
+
+{{ block content }}
+
+<p>
+You have choosen a {{chosen_color}} card. 
+<br>
+In the deck there were {{same_color_cards}} cards of the same color.
+<br>    
+You guess that in the deck there was {{guessed_cards}} cards.
+<br>
+Your payoff for this activity is {{participant.opt_payoff}}
+
+{%if chosen_color == 'red'%}
+<img src="{{static 'my_folder/red_card.png'}}" alt="Red Card" width="200" class="center">
+{%elif chosen_color == 'black'%}
+<img src="{{static 'my_folder/black_card.png'}}" alt="Black Card" width="200" class="center">
+{%endif%}
+</p>
+{{ next_button }}
+
+
+{{ endblock }}
